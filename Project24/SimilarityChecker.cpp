@@ -13,7 +13,21 @@ public:
 		if (count1 == count2) {
 			return LETTERCOUNT_MAX;
 		}
-		return 0;
+
+		int big, small;
+		if (count1 > count2) {
+			big = count1;
+			small = count2;
+		}
+		else {
+			big = count2;
+			small = count1;
+		}
+
+		if (big >= small * 2)
+			return 0;
+
+		return -1;
 	}
 
 private:
