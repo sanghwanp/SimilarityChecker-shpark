@@ -26,7 +26,7 @@ public:
 		}
 
 		if (big >= small * 2)
-			return 0;
+			return LETTERCOUNT_MIN;
 
 		return getLetterCountPatialScore(big, small);
 	}
@@ -37,4 +37,5 @@ public:
 
 private:
 	const int LETTERCOUNT_MAX = 60;
+	const int LETTERCOUNT_MIN = 0;
 };
