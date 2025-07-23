@@ -15,24 +15,24 @@ public:
 			return LETTERCOUNT_MAX;
 		}
 
-		int big, small;
+		int longcount, shortcount;
 		if (count1 > count2) {
-			big = count1;
-			small = count2;
+			longcount = count1;
+			shortcount = count2;
 		}
 		else {
-			big = count2;
-			small = count1;
+			longcount = count2;
+			shortcount = count1;
 		}
 
-		if (big >= small * 2)
+		if (longcount >= shortcount * 2)
 			return LETTERCOUNT_MIN;
 
-		return getLetterCountPatialScore(big, small);
+		return getLetterCountPatialScore(longcount, shortcount);
 	}
 
-	int getLetterCountPatialScore(int big, int small) {
-		return round((1 - static_cast<double>(big - small) / small) * 60);
+	int getLetterCountPatialScore(int longcount, int shortcount) {
+		return round((1 - static_cast<double>(longcount - shortcount) / shortcount) * 60);
 	}
 
 private:
