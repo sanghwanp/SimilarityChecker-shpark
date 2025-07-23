@@ -21,6 +21,11 @@ TEST_F(SimilarityCheckerFixture, getLetterCountScoreZero) {
 	EXPECT_EQ(0, checker.getLetterCountScore("1234123412341234", "4235"));
 }
 
+TEST_F(SimilarityCheckerFixture, getLetterCountScorePart) {
+	EXPECT_EQ(12, checker.getLetterCountScore("12345", "123451234"));
+	EXPECT_EQ(34, checker.getLetterCountScore("aaaaaaaaaa", "bbbbbbb"));
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();

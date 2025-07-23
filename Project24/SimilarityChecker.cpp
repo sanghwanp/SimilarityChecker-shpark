@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 
 class SimilarityChecker {
 public:
@@ -27,7 +28,11 @@ public:
 		if (big >= small * 2)
 			return 0;
 
-		return -1;
+		return getLetterCountPatialScore(big, small);
+	}
+
+	int getLetterCountPatialScore(int big, int small) {
+		return round((1 - static_cast<double>(big - small) / small) * 60);
 	}
 
 private:
